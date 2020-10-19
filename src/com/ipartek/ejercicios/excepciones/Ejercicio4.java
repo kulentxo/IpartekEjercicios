@@ -11,7 +11,6 @@ public class Ejercicio4 {
 
 	public static void main(String[] args) throws NumberFormatException, Exception {
 		Scanner sc = new Scanner(System.in);
-		int cuenta = 0;
 		char resp = 0;
 		Boolean isError = false;
 		ArrayList<String> Personas = new ArrayList<String>();
@@ -24,7 +23,6 @@ public class Ejercicio4 {
 				System.out.println("Introduce la edad de la persona: ");
 				persona.setEdad(Integer.parseInt(sc.nextLine()));
 				Personas.add(persona.getNombre());
-				cuenta++;
 				System.out.println("Quieres introducir alguna otra persona?");
 				resp = sc.nextLine().charAt(0);
 			} catch (Exception e) {
