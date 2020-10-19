@@ -27,7 +27,7 @@ public class excepcionesEjercicio4Clase {
 
 	public void setEdad(int edad) throws Exception {
 		if (edad > EDAD_MAX || edad < EDAD_MIN) {
-			throw new Exception("Introduce bien la edad");
+			throw new Exception("Introduce bien la edad entre 0 y 120");
 		}
 		this.edad = edad;
 	}
