@@ -1,4 +1,4 @@
-package com.ipartek.excepciones;
+package com.ipartek.ejercicios.excepciones;
 
 import java.util.Scanner;
 

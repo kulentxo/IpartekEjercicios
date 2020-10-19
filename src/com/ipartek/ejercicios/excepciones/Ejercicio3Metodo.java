@@ -1,4 +1,4 @@
-package com.ipartek.excepciones;
+package com.ipartek.ejercicios.excepciones;
 
 public class Ejercicio3Metodo {
 	static public char calcularPos(String frase, int num) throws Exception {
