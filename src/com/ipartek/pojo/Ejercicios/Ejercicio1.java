@@ -7,24 +7,16 @@ public class Ejercicio1 {
 	public static void main(String[] args) {
 
 		// Inicializar objetos
-		Perro smoky = new Perro();
-		Perro laika = new Perro();
-		Perro hachiko = new Perro();
-		Perro balto = new Perro();
-		Perro rintintin = new Perro();
-		Perro stubby = new Perro();
-		Perro pancho = new Perro();
-		Perro greyfriars = new Perro();
+		Perro smoky = new Perro("Smoky");
+		Perro laika = new Perro("Laika");
+		Perro hachiko = new Perro("Hachiko");
+		Perro balto = new Perro("Balto");
+		Perro rintintin = new Perro("Rintintin");
+		Perro stubby = new Perro("Stubby");
+		Perro pancho = new Perro("Pancho");
+		Perro greyfriars = new Perro("Greyfriars");
 
 		// utilizar los metodos de la clase
-		smoky.setNombre("Snoopy");
-		laika.setNombre("Laika");
-		hachiko.setNombre("Laika");
-		balto.setNombre("Laika");
-		rintintin.setNombre("Laika");
-		stubby.setNombre("Laika");
-		pancho.setNombre("Laika");
-		greyfriars.setNombre("Laika");
 
 		smoky.setHistoria(
 				"Este pequeño Yorkshire fue encontrado por un soldado estadounidense en la Primera Guerra Mundial y le acompañó en todas sus misiones. La historia cuenta que incluso ayudó a construir una base aérea transportando cable. Fue también un perro terapia para las víctimas de la guerra que estaban hospitalizadas. ");
