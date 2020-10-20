@@ -1,6 +1,7 @@
 package com.ipartek.pojo;
 
 public class excepcionesEjercicio4Clase {
+
 	private String nombre;
 	private int edad;
 
@@ -30,6 +31,11 @@ public class excepcionesEjercicio4Clase {
 			throw new Exception("Introduce bien la edad entre 0 y 120");
 		}
 		this.edad = edad;
+	}
+
+	@Override
+	public String toString() {
+		return "excepcionesEjercicio4Clase [nombre=" + nombre + ", edad=" + edad + "]";
 	}
 
 }
