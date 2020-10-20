@@ -10,8 +10,8 @@ public class excepcionesEjercicio4Clase {
 
 	public excepcionesEjercicio4Clase() {
 		super();
-		this.nombre = "Sin nombre";
-		this.edad = 0;
+		this.nombre = nombre;
+		this.edad = edad;
 	}
 
 	public String getNombre() {
@@ -31,6 +31,10 @@ public class excepcionesEjercicio4Clase {
 			throw new Exception("Introduce bien la edad entre 0 y 120");
 		}
 		this.edad = edad;
+	}
+
+	public void foo(String s) {
+		System.out.println(s.toLowerCase());
 	}
 
 	@Override
