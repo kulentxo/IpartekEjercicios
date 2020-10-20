@@ -1,10 +1,14 @@
 package com.ipartek.pojo.Ejercicios;
 
+import java.util.ArrayList;
+
 import com.ipartek.pojo.Perro;
 
 public class Ejercicio1 {
 
 	public static void main(String[] args) {
+
+		ArrayList<Perro> Perros = new ArrayList<>();
 
 		// Inicializar objetos
 		Perro smoky = new Perro("Smoky");
@@ -15,6 +19,15 @@ public class Ejercicio1 {
 		Perro stubby = new Perro("Stubby");
 		Perro pancho = new Perro("Pancho");
 		Perro greyfriars = new Perro("Greyfriars");
+
+		Perros.add(smoky);
+		Perros.add(laika);
+		Perros.add(hachiko);
+		Perros.add(balto);
+		Perros.add(rintintin);
+		Perros.add(stubby);
+		Perros.add(pancho);
+		Perros.add(greyfriars);
 
 		// utilizar los metodos de la clase
 
@@ -36,6 +49,24 @@ public class Ejercicio1 {
 				"Es conocido por ser el perro más fiel del mundo. Para conocer su historia nos trasladamos hasta Edimburgo. Bobby fue acompañante durante varios años de un vigilante de seguridad. Después de que éste muriera Bobby pasó 14 años hasta su muerte junto a su tumba. ");
 
 		System.out.println(hachiko.getHistoria());
+
+		System.out.println("-----------------------------");
+		System.out.println("Lista de los 8 perros");
+		System.out.println("-----------------------------");
+
+		for (int i = 0; i < Perros.size(); i++) {
+			System.out.println(Perros.get(i).getNombre());
+		}
+
+		Perros.remove(hachiko);
+
+		System.out.println("-----------------------------");
+		System.out.println("Lista de los 8 perros sin hachiko");
+		System.out.println("-----------------------------");
+
+		for (int i = 0; i < Perros.size(); i++) {
+			System.out.println(Perros.get(i).getNombre());
+		}
 	}
 
 }

@@ -10,8 +10,8 @@ public class excepcionesEjercicio4Clase {
 
 	public excepcionesEjercicio4Clase() {
 		super();
-		this.nombre = nombre;
-		this.edad = edad;
+		this.nombre = "";
+		this.edad = 0;
 	}
 
 	public String getNombre() {
