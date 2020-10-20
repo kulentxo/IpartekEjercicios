@@ -8,13 +8,19 @@ public class Perro {
 	private boolean isVacunado;
 	private String historia;
 
-	public Perro(String nombre) {
+	public Perro() {
 		super();
-		this.nombre = nombre;
+		this.nombre = "";
 		this.raza = "cruce";
 		this.peso = 0f;
 		this.isVacunado = false;
 		this.historia = "Erase una vez...";
+	}
+
+	public Perro(String nombre, String raza) {
+		super();
+		this.nombre = nombre;
+		this.raza = raza;
 	}
 
 	public String getNombre() {
