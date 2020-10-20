@@ -58,13 +58,14 @@ public class Ejercicio1 {
 			System.out.println(Perros.get(i).getNombre());
 		}
 
-		Perros.remove(hachiko);
-
 		System.out.println("-----------------------------");
 		System.out.println("Lista de los 8 perros sin hachiko");
 		System.out.println("-----------------------------");
 
 		for (int i = 0; i < Perros.size(); i++) {
+			if ("Hachiko".equals(Perros.get(i).getNombre())) {
+				Perros.remove(Perros.get(i));
+			}
 			System.out.println(Perros.get(i).getNombre());
 		}
 	}

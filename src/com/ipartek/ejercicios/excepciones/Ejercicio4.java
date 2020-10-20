@@ -42,7 +42,7 @@ public class Ejercicio4 {
 		System.out.println("----------------------");
 
 		for (excepcionesEjercicio4Clase p : Personas) {
-			System.out.println(p);
+			System.out.println("Nombre: " + p.getNombre() + " Edad: " + p.getEdad());
 		}
 
 		sc.close();
