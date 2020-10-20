@@ -1,17 +1,17 @@
 package com.ipartek.pojo;
 
-public class Pacientes {
+public class Paciente {
 
-	int peso;
-	float altura;
+	private int peso;
+	private float altura;
 
-	public Pacientes() {
+	public Paciente() {
 		super();
 		this.peso = 0;
 		this.altura = 0;
 	}
 
-	public Pacientes(int peso, float altura) {
+	public Paciente(int peso, float altura) {
 		this();
 		this.peso = peso;
 		this.altura = altura;

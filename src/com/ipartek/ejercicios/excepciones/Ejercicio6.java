@@ -3,7 +3,7 @@ package com.ipartek.ejercicios.excepciones;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import com.ipartek.pojo.Pacientes;
+import com.ipartek.pojo.Paciente;
 
 /**
  * Realizar una clase personalizada llamada ExcepcionListaNegra que extienda la
@@ -39,13 +39,13 @@ public class Ejercicio6 {
 
 		Scanner sc = new Scanner(System.in);
 
-		ArrayList<Pacientes> pacientes = new ArrayList<>();
-		Pacientes p1 = new Pacientes(130, 1.70f);
-		Pacientes p2 = new Pacientes(70, 1.90f);
-		Pacientes p3 = new Pacientes(80, 1.80f);
-		Pacientes p4 = new Pacientes(78, 1.85f);
-		Pacientes p5 = new Pacientes(30, 2.17f);
-		Pacientes p6 = new Pacientes(230, 1.50f);
+		ArrayList<Paciente> pacientes = new ArrayList<>();
+		Paciente p1 = new Paciente(130, 1.70f);
+		Paciente p2 = new Paciente(70, 1.90f);
+		Paciente p3 = new Paciente(80, 1.80f);
+		Paciente p4 = new Paciente(78, 1.85f);
+		Paciente p5 = new Paciente(30, 2.17f);
+		Paciente p6 = new Paciente(230, 1.50f);
 
 	}
 
