@@ -63,6 +63,7 @@ public class Ejercicio1 {
 		System.out.println("-----------------------------");
 
 		for (int i = 0; i < Perros.size(); i++) {
+
 			if ("Hachiko".equals(Perros.get(i).getNombre())) {
 				Perros.remove(Perros.get(i));
 			}
