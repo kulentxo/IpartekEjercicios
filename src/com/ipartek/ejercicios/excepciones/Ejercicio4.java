@@ -16,14 +16,15 @@ public class Ejercicio4 {
 		Boolean isError = false;
 
 		ArrayList<excepcionesEjercicio4Clase> Personas = new ArrayList<>();
-		excepcionesEjercicio4Clase persona = new excepcionesEjercicio4Clase();
 
 		do {
 
+			excepcionesEjercicio4Clase persona = new excepcionesEjercicio4Clase();
 			System.out.println("Introduce un nombre: ");
 			persona.setNombre(sc.nextLine());
 
 			try {
+
 				isError = false;
 				System.out.println("Introduce la edad de la persona: ");
 				persona.setEdad(Integer.parseInt(sc.nextLine()));
