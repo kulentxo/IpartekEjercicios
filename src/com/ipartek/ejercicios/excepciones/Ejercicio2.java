@@ -19,16 +19,16 @@ public class Ejercicio2 {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		int num1;
-		int num2;
+
 		boolean isCorrecto = true;
 		do {
+
 			isCorrecto = true;
 			try {
 				System.out.println("Introduce un numero: ");
-				num1 = Integer.parseInt(sc.nextLine());
+				Integer.parseInt(sc.nextLine());
 				System.out.println("Introduce otro numero: ");
-				num2 = Integer.parseInt(sc.nextLine());
+				Integer.parseInt(sc.nextLine());
 			} catch (NumberFormatException e) {
 				System.out.println("Por favor introduce un numero");
 				isCorrecto = false;

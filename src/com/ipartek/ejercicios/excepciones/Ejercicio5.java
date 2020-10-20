@@ -54,7 +54,7 @@ public class Ejercicio5 {
 			// NumberFormatException
 			try {
 				String nombre = "pepe";
-				int num = Integer.parseInt(nombre);
+				Integer.parseInt(nombre);
 			} catch (Exception e) {
 				System.out.println(e.toString());
 			}
