@@ -11,6 +11,7 @@ public class AppPerros {
 	final static String OPC_CREAR = "2";
 	final static String OPC_LISTA = "1";
 	final static String OPC_BAJA = "3";
+	final static String OPC_ACTUALIZAR = "4";
 	final static String OPC_SALIR = "s";
 	// variables globales para esta Clase
 	static Scanner sc = null;
@@ -38,6 +39,9 @@ public class AppPerros {
 			case OPC_BAJA:
 				baja();
 				break;
+			case OPC_ACTUALIZAR:
+				actualizar();
+				break;
 			default:
 				break;
 			}
@@ -48,6 +52,34 @@ public class AppPerros {
 		sc.close();
 
 	}// main
+
+	private static void actualizar() {
+		System.out.println("************ACTUALIZAR DATOS*************");
+		System.out.println("Introduce el nombre del perro que quieras actualizar: ");
+		String nom = sc.nextLine();
+		for (Perro perro : lista) {
+			try {
+				if (nom.equalsIgnoreCase(perro.getNombre())) {
+					System.out.println("Quieres cambiarle el nombre?");
+					String resp = sc.nextLine();
+					if (resp.equalsIgnoreCase("SI") || resp.equalsIgnoreCase("SÍ")) {
+						System.out.println("Introduce el nombre del perro: ");
+						perro.setNombre(sc.nextLine());
+					}
+					System.out.println("Quieres cambiarle la raza?");
+					resp = sc.nextLine();
+					if (resp.equalsIgnoreCase("SI") || resp.equalsIgnoreCase("SÍ")) {
+						System.out.println("Introduce el nombre del perro: ");
+						perro.setRaza(sc.nextLine());
+					}
+				}
+			} catch (Exception e) {
+				System.out.println("Ha ocurrido un problema.");
+			}
+		} // for
+		System.out.println("*******DATOS ACTUALIZADOS********");
+
+	}
 
 	private static void baja() {
 
@@ -128,12 +160,12 @@ public class AppPerros {
 	private static void pintarMenu() {
 
 		System.out.println("************************************");
-		System.out.println(" 1.- Listar todos los perros");
-		System.out.println(" 2.- Crear un perro");
-		System.out.println(" 3.- Dar de baja un Perro");
-		System.out.println(" etc etc ...");
+		System.out.println(" " + OPC_CREAR + ".- Listar todos los perros");
+		System.out.println(" " + OPC_LISTA + ".- Crear un perro");
+		System.out.println(" " + OPC_BAJA + ".- Dar de baja un perro");
+		System.out.println(" " + OPC_ACTUALIZAR + ".- Actualizar datos de un perro");
 		System.out.println(" ");
-		System.out.println(" S - Salir");
+		System.out.println(" " + OPC_SALIR + " - Salir");
 		System.out.println("************************************");
 
 		System.out.println("\n Selecciona una opcion del menu:");
