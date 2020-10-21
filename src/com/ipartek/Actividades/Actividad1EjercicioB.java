@@ -8,34 +8,38 @@ public class Actividad1EjercicioB {
 
 	final static String OPC_DNI = "1";
 	final static String OPC_CM = "2";
+	final static String OPC_SALIR = "S";
 
 	static Scanner sc = null;
 
 	public static void main(String[] args) {
 
 		sc = new Scanner(System.in);
+		String opc;
 
-		// TODO Ponerlo en bucle
-		pintarMenu();
+		do {
+			pintarMenu();
 
-		String opc = sc.nextLine();
+			opc = sc.nextLine();
 
-		switch (opc) {
-		case OPC_DNI:
-			calcularDNI();
-			break;
-		case OPC_CM:
-			calcularCM();
+			switch (opc) {
+			case OPC_DNI:
+				calcularDNI();
+				break;
+			case OPC_CM:
+				calcularCM();
 
-			break;
-		default:
-			break;
-		}
+				break;
+			default:
+				break;
+			}
+		} while (!opc.equalsIgnoreCase(OPC_SALIR));
 
+		System.out.println("********HASTA OTRA*********");
 	}
 
 	private static void calcularDNI() {
-		// TODO calcular la letra
+
 		System.out.println("****************CALCULAR LETRA DEL DNI*********************");
 		System.out.println("Introduce los 8 numeros de tu dni");
 		String dniNumeros = sc.nextLine();
