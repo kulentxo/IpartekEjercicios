@@ -11,6 +11,7 @@ public class AppPerros {
 	final static String OPC_CREAR = "2";
 	final static String OPC_LISTA = "1";
 	final static String OPC_BAJA = "3";
+	final static String OPC_SALIR = "s";
 	// variables globales para esta Clase
 	static Scanner sc = null;
 	static ArrayList<Perro> lista = new ArrayList<Perro>();
@@ -41,7 +42,7 @@ public class AppPerros {
 				break;
 			}
 
-		} while (!(opcion.toUpperCase().equals("S")));
+		} while (!(OPC_SALIR.equalsIgnoreCase(opcion)));
 
 		System.out.println("***********  ADIOS, nos vemos pronto   **************");
 		sc.close();
@@ -101,7 +102,7 @@ public class AppPerros {
 
 		System.out.println("************LISTA DE LOS PERROS************");
 		for (Perro perro : lista) {
-			System.out.println("Nombre: " + perro.getNombre() + " Raza: " + perro.getRaza());
+			System.out.println(String.format("%-15s [%s]", perro.getNombre(), perro.getRaza()));
 		}
 
 	}
