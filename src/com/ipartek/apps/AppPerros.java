@@ -82,7 +82,6 @@ public class AppPerros {
 	}
 
 	private static void baja() {
-
 		Perro p1 = null;
 
 		System.out.println("************DAR DE BAJA************");
@@ -110,7 +109,6 @@ public class AppPerros {
 	}
 
 	private static void crear() {
-
 		System.out.println("************CREAR PERRO************");
 		try {
 			System.out.println("Introduce nombre del perro: ");
@@ -131,7 +129,6 @@ public class AppPerros {
 	}
 
 	private static void listar() {
-
 		System.out.println("************LISTA DE LOS PERROS************");
 		for (Perro perro : lista) {
 			System.out.println(String.format("%-15s [%s]", perro.getNombre(), perro.getRaza()));
@@ -144,7 +141,6 @@ public class AppPerros {
 	 * En un futuro nos conectaremos a una bbdd
 	 */
 	private static void incializarDatos() {
-
 		lista.add(new Perro("Bubba", "Bulldog"));
 		lista.add(new Perro("Laika", "Beagle"));
 		lista.add(new Perro("Rintintin", "Husky"));
@@ -158,7 +154,6 @@ public class AppPerros {
 	 * 
 	 */
 	private static void pintarMenu() {
-
 		System.out.println("************************************");
 		System.out.println(" " + OPC_CREAR + ".- Listar todos los perros");
 		System.out.println(" " + OPC_LISTA + ".- Crear un perro");
