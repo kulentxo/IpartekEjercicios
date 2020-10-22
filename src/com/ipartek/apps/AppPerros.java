@@ -12,6 +12,7 @@ public class AppPerros {
 	final static String OPC_LISTA = "1";
 	final static String OPC_BAJA = "3";
 	final static String OPC_ACTUALIZAR = "4";
+	final static String OPC_VACUNAR = "5";
 	final static String OPC_SALIR = "s";
 	// variables globales para esta Clase
 	static Scanner sc = null;
@@ -42,6 +43,9 @@ public class AppPerros {
 			case OPC_ACTUALIZAR:
 				actualizar();
 				break;
+			case OPC_VACUNAR:
+				vacunar();
+				break;
 			default:
 				break;
 			}
@@ -52,6 +56,34 @@ public class AppPerros {
 		sc.close();
 
 	}// main
+
+	private static void vacunar() {
+		String nom = "";
+		boolean isEncontrado = false;
+
+		System.out.println("**************VACUNAR*************");
+		for (int i = 0; i < lista.size(); i++) {
+			if (lista.get(i).isVacunado()) {
+				System.out.println(lista.get(i).getNombre() + " esta vacunado.");
+			} else {
+				System.out.println(lista.get(i).getNombre() + " no esta vacunado.");
+			}
+		}
+		do {
+			System.out.println("Que perro quieres vacunar?");
+			nom = sc.nextLine();
+			for (int i = 0; i < lista.size(); i++) {
+				if (lista.get(i).getNombre().equalsIgnoreCase(nom)) {
+					lista.get(i).setVacunado(true);
+					isEncontrado = true;
+				}
+			}
+			if (isEncontrado == false) {
+				System.out.println("El perro introducido no existe");
+			}
+		} while (isEncontrado != true);
+		System.out.println(String.format("***************%s a sido vacunado***************", nom));
+	}
 
 	private static void actualizar() {
 		System.out.println("************ACTUALIZAR DATOS*************");
@@ -159,6 +191,7 @@ public class AppPerros {
 		System.out.println(" " + OPC_LISTA + ".- Crear un perro");
 		System.out.println(" " + OPC_BAJA + ".- Dar de baja un perro");
 		System.out.println(" " + OPC_ACTUALIZAR + ".- Actualizar datos de un perro");
+		System.out.println(" " + OPC_VACUNAR + ".- Vacunar un perro");
 		System.out.println(" ");
 		System.out.println(" " + OPC_SALIR + " - Salir");
 		System.out.println("************************************");
