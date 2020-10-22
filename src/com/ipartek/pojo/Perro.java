@@ -2,6 +2,7 @@ package com.ipartek.pojo;
 
 public class Perro {
 
+	private int id;
 	private String nombre;
 	private String raza;
 	private float peso;
@@ -10,6 +11,7 @@ public class Perro {
 
 	public Perro() {
 		super();
+		this.id = 0;
 		this.nombre = "";
 		this.raza = "cruce";
 		this.peso = 0f;
@@ -21,6 +23,14 @@ public class Perro {
 		super();
 		this.nombre = nombre;
 		this.raza = raza;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getNombre() {

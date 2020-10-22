@@ -3,6 +3,7 @@ package com.ipartek.apps;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import com.ipartek.modelo.PerroDAOArrayList;
 import com.ipartek.pojo.Perro;
 
 public class AppPerros {
@@ -16,15 +17,13 @@ public class AppPerros {
 	final static String OPC_SALIR = "s";
 	// variables globales para esta Clase
 	static Scanner sc = null;
-	static ArrayList<Perro> lista = new ArrayList<Perro>();
 	static String opcion = ""; // opcion seleccionada en el menu por el usuario
+	static PerroDAOArrayList modelo = new PerroDAOArrayList();
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 
 		System.out.println("***********  APP  PERRERA   **************");
 		sc = new Scanner(System.in);
-
-		incializarDatos();
 
 		do {
 
@@ -58,6 +57,7 @@ public class AppPerros {
 	}// main
 
 	private static void vacunar() {
+		ArrayList<Perro> lista = modelo.listar();
 		String nom = "";
 		boolean isEncontrado = false;
 
@@ -85,7 +85,10 @@ public class AppPerros {
 		System.out.println(String.format("***************%s a sido vacunado***************", nom));
 	}
 
-	private static void actualizar() {
+	private static void actualizar() throws Exception {
+		ArrayList<Perro> lista = modelo.listar();
+		String nomNuevo = "";
+		String razaNueva = "";
 		System.out.println("************ACTUALIZAR DATOS*************");
 		System.out.println("Introduce el nombre del perro que quieras actualizar: ");
 		String nom = sc.nextLine();
@@ -96,24 +99,26 @@ public class AppPerros {
 					String resp = sc.nextLine();
 					if (resp.equalsIgnoreCase("SI") || resp.equalsIgnoreCase("SÍ")) {
 						System.out.println("Introduce el nombre del perro: ");
-						perro.setNombre(sc.nextLine());
+						razaNueva = sc.nextLine();
 					}
 					System.out.println("Quieres cambiarle la raza?");
 					resp = sc.nextLine();
 					if (resp.equalsIgnoreCase("SI") || resp.equalsIgnoreCase("SÍ")) {
 						System.out.println("Introduce el nombre del perro: ");
-						perro.setRaza(sc.nextLine());
+						nomNuevo = sc.nextLine();
 					}
 				}
 			} catch (Exception e) {
 				System.out.println("Ha ocurrido un problema.");
 			}
 		} // for
+		modelo.modificar(new Perro(nomNuevo, razaNueva));
 		System.out.println("*******DATOS ACTUALIZADOS********");
 
 	}
 
 	private static void baja() {
+		ArrayList<Perro> lista = modelo.listar();
 		Perro p1 = null;
 
 		System.out.println("************DAR DE BAJA************");
@@ -141,6 +146,7 @@ public class AppPerros {
 	}
 
 	private static void crear() {
+		modelo.listar();
 		System.out.println("************CREAR PERRO************");
 		try {
 			System.out.println("Introduce nombre del perro: ");
@@ -151,7 +157,7 @@ public class AppPerros {
 			if (nombre.equals("") || raza.equals("")) {
 				throw new Exception("Tienes que introducir el nombre y la raza");
 			} else {
-				lista.add(new Perro(nombre, raza));
+				modelo.crear(new Perro(nombre, raza));
 			}
 
 		} catch (Exception e) {
@@ -161,22 +167,12 @@ public class AppPerros {
 	}
 
 	private static void listar() {
+		ArrayList<Perro> lista = modelo.listar();
+
 		System.out.println("************LISTA DE LOS PERROS************");
 		for (Perro perro : lista) {
 			System.out.println(String.format("%-15s [%s]", perro.getNombre(), perro.getRaza()));
 		}
-
-	}
-
-	/**
-	 * Inicializar el ArrayList para simular que existen perros.<br>
-	 * En un futuro nos conectaremos a una bbdd
-	 */
-	private static void incializarDatos() {
-		lista.add(new Perro("Bubba", "Bulldog"));
-		lista.add(new Perro("Laika", "Beagle"));
-		lista.add(new Perro("Rintintin", "Husky"));
-		lista.add(new Perro("goffy", "Pastor Aleman"));
 
 	}
 
@@ -187,8 +183,8 @@ public class AppPerros {
 	 */
 	private static void pintarMenu() {
 		System.out.println("************************************");
-		System.out.println(" " + OPC_CREAR + ".- Listar todos los perros");
-		System.out.println(" " + OPC_LISTA + ".- Crear un perro");
+		System.out.println(" " + OPC_LISTA + ".- Listar todos los perros");
+		System.out.println(" " + OPC_CREAR + ".- Crear un perro");
 		System.out.println(" " + OPC_BAJA + ".- Dar de baja un perro");
 		System.out.println(" " + OPC_ACTUALIZAR + ".- Actualizar datos de un perro");
 		System.out.println(" " + OPC_VACUNAR + ".- Vacunar un perro");
