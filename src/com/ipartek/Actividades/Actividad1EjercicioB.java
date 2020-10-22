@@ -4,6 +4,20 @@ import java.util.Scanner;
 
 import com.ipartek.Utilidades;
 
+/**
+ * Crear un proyecto en modo consola que nos muestre un menú de 3 opciones
+ * <ul>
+ * <li>Calcular la letra del dni</li>
+ * <li>Calcular medida de cm a pulgadas</li>
+ * <li>Salir</li>
+ * </ul>
+ * Hacer que dicho menú se ejecute en bucle hasta que se pulse salir, y si el
+ * usuario escoge cada una de las funciones, que permita introducir los datos
+ * correspondientes por teclado para poder dar el resultado
+ * 
+ * @author Julen Martin
+ * @version 1.0
+ */
 public class Actividad1EjercicioB {
 
 	final static String OPC_DNI = "1";

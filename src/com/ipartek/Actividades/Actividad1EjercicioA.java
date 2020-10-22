@@ -60,6 +60,13 @@ public class Actividad1EjercicioA {
 			}
 		}
 		sc.close();
+
+		System.out.println("Estas son las notas introducidas.");
+
+		for (int i = 0; i < arrNotas.length; i++) {
+			System.out.println(arrNotas[i]);
+		}
+
 		media = media / MAX_ARRAY;
 
 		System.out.printf("La media de las notas es: %.2f, la nota mas alta es: %.2f y la nota mas baja es: %.2f",
