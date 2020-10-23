@@ -39,7 +39,7 @@ public class Utilidades implements iFunciones {
 		String nombre = "";
 		System.out.println("Introduce un nombre");
 		nombre = sc.nextLine();
-		if (nombre.length() < 1) {
+		if (nombre.length() <= 1) {
 			throw new Exception("El nombre debe contener mas de una letra");
 		} else if (nombre.matches("[0-9]*")) {
 			throw new Exception("El nombre no puede ser un numero");
@@ -78,6 +78,7 @@ public class Utilidades implements iFunciones {
 
 	@Override
 	public Serie pedirDatosPorConsola() {
+
 		Scanner sc = new Scanner(System.in);
 		Serie s1 = new Serie();
 		System.out.println("Introduce nombre de la serie: ");

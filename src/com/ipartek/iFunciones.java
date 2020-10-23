@@ -35,7 +35,7 @@ public interface iFunciones {
 	 * 
 	 * @param dineroEntregado
 	 * @param precioProducto
-	 * @return
+	 * @return el resultado de la resta
 	 * @throws Exception
 	 */
 	float calcularVueltas(float dineroEntregado, float precioProducto) throws Exception;
