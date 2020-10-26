@@ -23,6 +23,7 @@ public class Actividad1EjercicioB {
 	final static String OPC_DNI = "1";
 	final static String OPC_CM = "2";
 	final static String OPC_SALIR = "S";
+	final static float CALCULAR_PULGADAS = 2.54f;
 
 	static Scanner sc = null;
 
@@ -77,7 +78,7 @@ public class Actividad1EjercicioB {
 		try {
 			System.out.println("Introduce una distancia en cms: ");
 			int distancia = Integer.parseInt(sc.nextLine());
-			System.out.println((float) (distancia / 2.54) + " pulgadas");
+			System.out.println((float) (distancia / CALCULAR_PULGADAS) + " pulgadas");
 		} catch (NumberFormatException e) {
 			System.out.println("Tienes que introducir un numero valido.");
 

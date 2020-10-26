@@ -4,15 +4,14 @@ import java.util.Scanner;
 
 import com.ipartek.pojo.Serie;
 
-/**
- * Calcula la letra del DNI
- * 
- * @param numeros String son los 8 numeros del DNI
- * @return dni completo con los numeros + letra
- * @throws Exception si no pasamos como parametros 8 numeros
- */
 public class Utilidades implements iFunciones {
-
+	/**
+	 * Calcula la letra del DNI
+	 * 
+	 * @param numeros String son los 8 numeros del DNI
+	 * @return dni completo con los numeros + letra
+	 * @throws Exception si no pasamos como parametros 8 numeros
+	 */
 	static public String calcularDNI(String numeros) throws Exception {
 
 		if (numeros == null) {
