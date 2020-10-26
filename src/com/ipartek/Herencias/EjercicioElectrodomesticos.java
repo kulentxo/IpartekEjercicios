@@ -21,6 +21,12 @@ public class EjercicioElectrodomesticos {
 		televisionesPlanas[2] = tele3;
 		televisionesPlanas[3] = tele4;
 		televisionesPlanas[4] = tele5;
+
+		for (Electrodomestico electrodomestico : televisionesPlanas) {
+			if (electrodomestico instanceof televisionPlana) {
+				((televisionPlana) electrodomestico).getTipoPantalla();
+			}
+		}
 	}
 
 }
