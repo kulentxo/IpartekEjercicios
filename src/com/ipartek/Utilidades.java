@@ -80,13 +80,16 @@ public class Utilidades implements iFunciones {
 	public Serie pedirDatosPorConsola() {
 
 		Scanner sc = new Scanner(System.in);
-		Serie s1 = new Serie();
+
 		System.out.println("Introduce nombre de la serie: ");
-		s1.setNombre(sc.nextLine());
+		Serie s1 = new Serie(sc.nextLine());
+
 		System.out.println("Introduce numero de temporada de la serie: ");
 		s1.setNumTemporadas(Integer.parseInt(sc.nextLine()));
+
 		System.out.println("Introduce duracion de la serie: ");
 		s1.setDuracion(Integer.parseInt(sc.nextLine()));
+
 		System.out.println("Introduce la plataforma de la serie: ");
 		s1.setPlataforma(sc.nextLine());
 

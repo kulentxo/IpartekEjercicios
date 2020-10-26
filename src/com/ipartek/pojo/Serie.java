@@ -22,9 +22,9 @@ public class Serie {
 	private int duracion;
 	private String plataforma;
 
-	public Serie() {
+	public Serie(String nombre) {
 		super();
-		this.nombre = "";
+		this.nombre = nombre;
 		this.numTemporadas = 0;
 		this.duracion = 0;
 		this.plataforma = "Internet";
