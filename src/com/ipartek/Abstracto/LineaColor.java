@@ -6,7 +6,7 @@ public class LineaColor extends Linea {
 	@Override
 	void dibujar() {
 
-		super.dibujar();
+		// super.dibujar();
 		System.out.println("El color es: " + color);
 	}
 }

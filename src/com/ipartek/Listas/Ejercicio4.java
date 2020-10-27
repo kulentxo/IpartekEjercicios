@@ -1,8 +1,8 @@
 package com.ipartek.Listas;
 
 import java.util.ArrayList;
-import java.util.Collections;
 
+import com.ipartek.pojo.Baraja;
 import com.ipartek.pojo.Carta;
 
 /**
@@ -20,38 +20,14 @@ public class Ejercicio4 {
 
 	public static void main(String[] args) {
 
-		int count = 0;
 		ArrayList<Carta> baraja = new ArrayList<>();
+		Baraja b = new Baraja();
 
-		for (int i = 1; i <= 41; i++) {
-			count++;
-			Carta carta = new Carta();
-			if (i <= 10) {
-				carta.setNumero(count);
-				carta.setPalo("copa");
-				baraja.add(carta);
-			} else if (i > 10 && i <= 20) {
-				carta.setNumero(count);
-				carta.setPalo("basto");
-				baraja.add(carta);
-			} else if (i > 20 && i <= 30) {
-				carta.setNumero(count);
-				carta.setPalo("espada");
-				baraja.add(carta);
-			} else {
-				carta.setNumero(count);
-				carta.setPalo("oro");
-				baraja.add(carta);
-			}
-			if (count == 10) {
-				count = 0;
-			}
-		} // for
+		b.crear(baraja);
 
-		Collections.shuffle(baraja);
-		for (Carta carta : baraja) {
-			System.out.println("Carta: " + carta.getNumero() + " " + carta.getPalo());
-		}
+		b.Barajar(baraja);
+
+		b.mostrar(baraja);
 	}
 
 }
