@@ -26,7 +26,7 @@ public class PerroDAOArrayList implements PerroDao {
 
 	@Override
 	public Perro recuperar(int id) {
-		// TODO Auto-generated method stub
+
 		return null;
 	}
 
@@ -69,7 +69,7 @@ public class PerroDAOArrayList implements PerroDao {
 
 	@Override
 	public boolean eliminar(int id) throws Exception {
-		// TODO Auto-generated method stub
+
 		return false;
 	}
 

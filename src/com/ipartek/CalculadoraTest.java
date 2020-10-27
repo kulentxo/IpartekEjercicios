@@ -27,7 +27,7 @@ class CalculadoraTest {
 		try {
 			res = (int) util.calcularVueltas(100, 100);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
+
 			e.printStackTrace();
 		}
 		int esperado = 0;

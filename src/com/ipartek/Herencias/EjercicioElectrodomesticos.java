@@ -6,7 +6,7 @@ import com.ipartek.pojo.televisionPlana;
 public class EjercicioElectrodomesticos {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+
 		Electrodomestico[] televisionesPlanas;
 		televisionesPlanas = new Electrodomestico[5];
 
