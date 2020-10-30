@@ -11,14 +11,14 @@ public class Ejercicio1 {
 		ArrayList<Perro> Perros = new ArrayList<>();
 
 		// Inicializar objetos
-		Perro smoky = new Perro("Smoky", "Caniche");
-		Perro laika = new Perro("Laika", "Labrador");
-		Perro hachiko = new Perro("Hachiko", "Golden retriever");
-		Perro balto = new Perro("Balto", "Dachshund");
-		Perro rintintin = new Perro("Rintintin", "Rottweiler");
-		Perro stubby = new Perro("Stubby", "Galgo");
-		Perro pancho = new Perro("Pancho", "Buldog");
-		Perro greyfriars = new Perro("Greyfriars", "Dachshund");
+		Perro smoky = new Perro("Smoky", "Caniche", 0, "");
+		Perro laika = new Perro("Laika", "Labrador", 0, "");
+		Perro hachiko = new Perro("Hachiko", "Golden retriever", 0, "");
+		Perro balto = new Perro("Balto", "Dachshund", 0, "");
+		Perro rintintin = new Perro("Rintintin", "Rottweiler", 0, "");
+		Perro stubby = new Perro("Stubby", "Galgo", 0, "");
+		Perro pancho = new Perro("Pancho", "Buldog", 0, "");
+		Perro greyfriars = new Perro("Greyfriars", "Dachshund", 0, "");
 
 		Perros.add(smoky);
 		Perros.add(laika);

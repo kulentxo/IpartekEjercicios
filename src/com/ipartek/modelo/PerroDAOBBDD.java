@@ -69,11 +69,13 @@ public class PerroDAOBBDD implements PerroDao {
 	@Override
 	public Perro crear(Perro p) throws Exception {
 		Perro perro = null;
-		String sql = "INSERT INTO perro (nombre, raza) VALUES (?, ?);";
+		String sql = "INSERT INTO perro (nombre, raza, peso, historia) VALUES (?, ?, ?, ?);";
 		try (Connection connect = DriverManager.getConnection(PATH);
 				PreparedStatement pst = connect.prepareStatement(sql);) {
 			pst.setString(1, p.getNombre());
 			pst.setString(2, p.getRaza());
+			pst.setFloat(3, p.getPeso());
+			pst.setString(4, p.getHistoria());
 
 			pst.executeUpdate();
 		}

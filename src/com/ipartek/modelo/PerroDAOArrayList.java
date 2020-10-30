@@ -17,10 +17,10 @@ public class PerroDAOArrayList implements PerroDao {
 	public ArrayList<Perro> listar() {
 
 		if (lista != null && lista.isEmpty()) {
-			lista.add(new Perro("Bubba", "Bulldog"));
-			lista.add(new Perro("Laika", "Beagle"));
-			lista.add(new Perro("Rintintin", "Husky"));
-			lista.add(new Perro("goffy", "Pastor Aleman"));
+			lista.add(new Perro("Bubba", "Bulldog", 0, ""));
+			lista.add(new Perro("Laika", "Beagle", 0, ""));
+			lista.add(new Perro("Rintintin", "Husky", 0, ""));
+			lista.add(new Perro("goffy", "Pastor Aleman", 0, ""));
 		}
 		return lista;
 	}

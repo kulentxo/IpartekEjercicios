@@ -157,11 +157,14 @@ public class AppPerros {
 			String nombre = sc.nextLine();
 			System.out.println("Introduce la raza del perro: ");
 			String raza = sc.nextLine();
-
-			if (nombre.equals("") || raza.equals("")) {
+			System.out.println("Introduce el peso del perro: ");
+			float peso = Float.parseFloat(sc.nextLine());
+			System.out.println("Introduce la historia del perro: ");
+			String historia = sc.nextLine();
+			if (nombre.equals("")) {
 				throw new Exception("Tienes que introducir el nombre y la raza");
 			} else {
-				modelo.crear(new Perro(nombre, raza));
+				modelo.crear(new Perro(nombre, raza, peso, historia));
 			}
 
 		} catch (Exception e) {

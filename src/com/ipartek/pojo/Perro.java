@@ -25,10 +25,12 @@ public class Perro {
 		this.isVacunado = isVacunado;
 	}
 
-	public Perro(String nombre, String raza) {
+	public Perro(String nombre, String raza, float peso, String historia) {
 		super();
 		this.nombre = nombre;
 		this.raza = raza;
+		this.historia = historia;
+		this.peso = peso;
 	}
 
 	public Perro(int id, String nombre, String raza) {
