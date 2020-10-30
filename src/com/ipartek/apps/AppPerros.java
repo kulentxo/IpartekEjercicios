@@ -1,9 +1,10 @@
 package com.ipartek.apps;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import com.ipartek.modelo.PerroDAOArrayList;
+import com.ipartek.modelo.PerroDAOBBDD;
 import com.ipartek.pojo.Perro;
 
 public class AppPerros {
@@ -18,7 +19,7 @@ public class AppPerros {
 	// variables globales para esta Clase
 	static Scanner sc = null;
 	static String opcion = ""; // opcion seleccionada en el menu por el usuario
-	static PerroDAOArrayList modelo = new PerroDAOArrayList();
+	static PerroDAOBBDD modelo = new PerroDAOBBDD();
 
 	public static void main(String[] args) throws Exception {
 
@@ -56,7 +57,7 @@ public class AppPerros {
 
 	}// main
 
-	private static void vacunar() {
+	private static void vacunar() throws SQLException {
 		ArrayList<Perro> lista = modelo.listar();
 		String nom = "";
 		boolean isEncontrado = false;
@@ -74,7 +75,7 @@ public class AppPerros {
 			nom = sc.nextLine();
 			for (int i = 0; i < lista.size(); i++) {
 				if (lista.get(i).getNombre().equalsIgnoreCase(nom)) {
-					lista.get(i).setVacunado(true);
+					modelo.vacunar(new Perro(lista.get(i).getId(), true));
 					isEncontrado = true;
 				}
 			}
@@ -89,37 +90,40 @@ public class AppPerros {
 		ArrayList<Perro> lista = modelo.listar();
 		String nomNuevo = "";
 		String razaNueva = "";
+		int id = 0;
 		System.out.println("************ACTUALIZAR DATOS*************");
 		System.out.println("Introduce el nombre del perro que quieras actualizar: ");
 		String nom = sc.nextLine();
 		for (Perro perro : lista) {
 			try {
 				if (nom.equalsIgnoreCase(perro.getNombre())) {
+					id = perro.getId();
 					System.out.println("Quieres cambiarle el nombre?");
 					String resp = sc.nextLine();
 					if (resp.equalsIgnoreCase("SI") || resp.equalsIgnoreCase("SÍ")) {
 						System.out.println("Introduce el nombre del perro: ");
-						razaNueva = sc.nextLine();
+						nomNuevo = sc.nextLine();
 					}
 					System.out.println("Quieres cambiarle la raza?");
 					resp = sc.nextLine();
 					if (resp.equalsIgnoreCase("SI") || resp.equalsIgnoreCase("SÍ")) {
-						System.out.println("Introduce el nombre del perro: ");
-						nomNuevo = sc.nextLine();
+						System.out.println("Introduce la raza del perro: ");
+						razaNueva = sc.nextLine();
 					}
 				}
 			} catch (Exception e) {
 				System.out.println("Ha ocurrido un problema.");
 			}
 		} // for
-		modelo.modificar(new Perro(nomNuevo, razaNueva));
+		modelo.modificar(new Perro(id, nomNuevo, razaNueva));
 		System.out.println("*******DATOS ACTUALIZADOS********");
 
 	}
 
-	private static void baja() {
+	private static void baja() throws Exception {
 		ArrayList<Perro> lista = modelo.listar();
 		Perro p1 = null;
+		int id = 0;
 
 		System.out.println("************DAR DE BAJA************");
 		try {
@@ -132,7 +136,7 @@ public class AppPerros {
 
 				for (Perro perro : lista) {
 					if (nom.toUpperCase().equals((perro.getNombre()).toUpperCase())) {
-						p1 = perro;
+						id = perro.getId();
 					}
 				}
 			}
@@ -141,11 +145,11 @@ public class AppPerros {
 			System.out.println("Excepcion: " + e.getMessage());
 		}
 
-		lista.remove(p1);
+		modelo.eliminar(id);
 
 	}
 
-	private static void crear() {
+	private static void crear() throws SQLException {
 		modelo.listar();
 		System.out.println("************CREAR PERRO************");
 		try {
@@ -166,12 +170,12 @@ public class AppPerros {
 
 	}
 
-	private static void listar() {
+	private static void listar() throws SQLException {
 		ArrayList<Perro> lista = modelo.listar();
 
 		System.out.println("************LISTA DE LOS PERROS************");
 		for (Perro perro : lista) {
-			System.out.println(String.format("%-15s [%s]", perro.getNombre(), perro.getRaza()));
+			System.out.println(String.format("%-15s [%s] %s", perro.getNombre(), perro.getRaza(), perro.isVacunado()));
 		}
 
 	}

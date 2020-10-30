@@ -19,8 +19,21 @@ public class Perro {
 		this.historia = "Erase una vez...";
 	}
 
+	public Perro(int id, boolean isVacunado) {
+		super();
+		this.id = id;
+		this.isVacunado = isVacunado;
+	}
+
 	public Perro(String nombre, String raza) {
 		super();
+		this.nombre = nombre;
+		this.raza = raza;
+	}
+
+	public Perro(int id, String nombre, String raza) {
+		super();
+		this.id = id;
 		this.nombre = nombre;
 		this.raza = raza;
 	}

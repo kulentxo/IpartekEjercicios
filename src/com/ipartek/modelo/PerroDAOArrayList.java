@@ -1,5 +1,6 @@
 package com.ipartek.modelo;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 import com.ipartek.pojo.Perro;
@@ -71,6 +72,12 @@ public class PerroDAOArrayList implements PerroDao {
 	public boolean eliminar(int id) throws Exception {
 
 		return false;
+	}
+
+	@Override
+	public Perro vacunar(Perro p) throws SQLException {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

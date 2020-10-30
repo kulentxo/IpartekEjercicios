@@ -1,5 +1,6 @@
 package com.ipartek.modelo;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 import com.ipartek.pojo.Perro;
@@ -16,16 +17,18 @@ public interface PerroDao {
 	 * lista perros
 	 * 
 	 * @return todos los perros, si no existe ninguno ArrayList<Perro> vacio no null
+	 * @throws SQLException
 	 */
-	ArrayList<Perro> listar();
+	ArrayList<Perro> listar() throws SQLException;
 
 	/**
 	 * Recupera el detalle de un Perro
 	 * 
 	 * @param id identificador
 	 * @return Perro con susa datos o null si no encuentra por su id
+	 * @throws SQLException
 	 */
-	Perro recuperar(int id);
+	Perro recuperar(int id) throws SQLException;
 
 	/**
 	 * Crea un nuevo perro y cuando es guardado se le asigan una nueva id
@@ -44,6 +47,8 @@ public interface PerroDao {
 	 * @throws Exception si no encuentra el Perro, o el nombre ya existe
 	 */
 	Perro modificar(Perro p) throws Exception;
+
+	Perro vacunar(Perro p) throws SQLException;
 
 	/**
 	 * Elimina el Perro gracias a su identificador
