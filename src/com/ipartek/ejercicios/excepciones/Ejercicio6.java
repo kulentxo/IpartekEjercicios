@@ -47,6 +47,8 @@ public class Ejercicio6 {
 		Paciente p5 = new Paciente(30, 2.17f);
 		Paciente p6 = new Paciente(230, 1.50f);
 
+		sc.close();
+
 	}
 
 }

@@ -109,6 +109,8 @@ public class AppPerros {
 					if (resp.equalsIgnoreCase("SI") || resp.equalsIgnoreCase("SÍ")) {
 						System.out.println("Introduce la raza del perro: ");
 						razaNueva = sc.nextLine();
+					} else {
+						razaNueva = perro.getRaza();
 					}
 				}
 			} catch (Exception e) {
@@ -122,7 +124,6 @@ public class AppPerros {
 
 	private static void baja() throws Exception {
 		ArrayList<Perro> lista = modelo.listar();
-		Perro p1 = null;
 		int id = 0;
 
 		System.out.println("************DAR DE BAJA************");
