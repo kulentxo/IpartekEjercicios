@@ -125,28 +125,36 @@ public class AppPerros {
 	private static void baja() throws Exception {
 		ArrayList<Perro> lista = modelo.listar();
 		int id = 0;
+		boolean isEncontrado = false;
+		String nombre;
+		Perro p;
 
 		System.out.println("************DAR DE BAJA************");
 		try {
-			System.out.println("Introduce el nombre del perro que quieras dar de baja: ");
-			String nom = sc.nextLine();
+			do {
+				System.out.println("Introduce el id del perro que quieres dar de baja: ");
+				id = Integer.parseInt(sc.nextLine());
 
-			if (nom.equals("")) {
-				throw new Exception("Tienes que introducir el nombre.");
-			} else {
-
-				for (Perro perro : lista) {
-					if (nom.toUpperCase().equals((perro.getNombre()).toUpperCase())) {
-						id = perro.getId();
-					}
+				p = modelo.recuperar(id);
+				if (p == null) {
+					System.out.println("El perro no existe");
+				} else {
+					isEncontrado = true;
 				}
-			}
+			} while (!isEncontrado);
 
-		} catch (Exception e) {
+			do {
+				System.out.println("Si quieres eliminar a " + p.getNombre() + " introduce su nombre");
+				nombre = sc.nextLine();
+			} while (!nombre.equals(p.getNombre()));
+
+			modelo.eliminar(id);
+
+		} catch (
+
+		Exception e) {
 			System.out.println("Excepcion: " + e.getMessage());
 		}
-
-		modelo.eliminar(id);
 
 	}
 
@@ -158,12 +166,15 @@ public class AppPerros {
 			String nombre = sc.nextLine();
 			System.out.println("Introduce la raza del perro: ");
 			String raza = sc.nextLine();
+			if (raza.equals("")) {
+				raza = "cruce";
+			}
 			System.out.println("Introduce el peso del perro: ");
 			float peso = Float.parseFloat(sc.nextLine());
 			System.out.println("Introduce la historia del perro: ");
 			String historia = sc.nextLine();
 			if (nombre.equals("")) {
-				throw new Exception("Tienes que introducir el nombre y la raza");
+				throw new Exception("Tienes que introducir el nombre");
 			} else {
 				modelo.crear(new Perro(nombre, raza, peso, historia));
 			}
