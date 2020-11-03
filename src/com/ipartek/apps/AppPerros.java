@@ -123,7 +123,7 @@ public class AppPerros {
 	}
 
 	private static void baja() throws Exception {
-		ArrayList<Perro> lista = modelo.listar();
+		modelo.listar();
 		int id = 0;
 		boolean isEncontrado = false;
 		String nombre;
