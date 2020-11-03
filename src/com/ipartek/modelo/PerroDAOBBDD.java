@@ -12,6 +12,18 @@ import com.ipartek.pojo.Perro;
 public class PerroDAOBBDD implements PerroDao {
 
 	private static final String PATH = "jdbc:sqlite:ddbb/perrera.db";
+	private static PerroDAOBBDD INSTANCE = null;
+
+	private PerroDAOBBDD() {
+		super();
+	}
+
+	public synchronized static PerroDAOBBDD getInstance() {
+		if (INSTANCE == null) {
+			INSTANCE = new PerroDAOBBDD();
+		}
+		return INSTANCE;
+	}
 
 	@Override
 	public ArrayList<Perro> listar() throws SQLException {

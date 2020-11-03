@@ -8,7 +8,7 @@ import com.ipartek.pojo.Perro;
 public class Ejercicio1 {
 
 	public static void main(String[] args) throws SQLException {
-		PerroDAOBBDD dao = new PerroDAOBBDD();
+		PerroDAOBBDD dao = PerroDAOBBDD.getInstance();
 		System.out.println(dao.recuperar(1));
 		for (Perro perro : dao.listar()) {
 			System.out.println(perro);

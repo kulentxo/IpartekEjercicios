@@ -19,7 +19,7 @@ public class AppPerros {
 	// variables globales para esta Clase
 	static Scanner sc = null;
 	static String opcion = ""; // opcion seleccionada en el menu por el usuario
-	static PerroDAOBBDD modelo = new PerroDAOBBDD();
+	static private PerroDAOBBDD modelo = PerroDAOBBDD.getInstance();
 
 	public static void main(String[] args) throws Exception {
 
