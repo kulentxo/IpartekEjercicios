@@ -42,12 +42,14 @@ public class PerroDAOArrayList implements PerroDao {
 
 	@Override
 	public Perro recuperar(int id) {
+		Perro p = null;
+
 		for (int i = 0; i < lista.size(); i++) {
 			if (lista.get(i) == lista.get(id)) {
-				return lista.get(id);
+				p = lista.get(id);
 			}
 		}
-		return null;
+		return p;
 	}
 
 	@Override
@@ -87,10 +89,10 @@ public class PerroDAOArrayList implements PerroDao {
 		for (int i = 0; i < lista.size(); i++) {
 			if (id == lista.get(i).getId()) {
 				lista.remove(id);
-				return true;
+				isEncontrado = true;
 			}
 		}
-		return false;
+		return isEncontrado;
 	}
 
 	@Override
