@@ -1,0 +1,129 @@
+/*Variables globales*/
+:root {
+    --primary: #003580;
+    --accent: #f7f7f7;
+    --secondary: #8ab7fb;
+    --negro:  black;
+    --blanco: white;
+    --todo: #2b2b2b;
+    --azul: #003580;
+}
+
+/*Resetear los valores predeterminados del navegador*/
+* {
+    margin: 0;
+    padding: 0;
+}
+.principal, header, main{
+    
+    box-sizing: border-box;
+    margin: auto;
+}
+.principal{
+    background-color: var(--blanco);
+}
+header{
+    
+    color: #FFF
+}
+h1{
+    color: var(--primary);
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: var(--blanco);
+}
+h2{
+    color: var(--primary);
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 25px;
+    border-top: 1px solid #d5d5d5;
+    border-bottom: 1px solid #d5d5d5;
+    margin-bottom: 20px;
+}
+#dc{
+    color:var(--secondary);
+}
+p{
+    color: #212529;
+}
+img{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+article{
+    margin-left: 300px;
+    margin-right: 300px;
+    background-color: var(--accent);
+}
+
+section article img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+section article p{
+    font-size: 1.2em;
+    line-height: 1.4;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+main{
+    background-color: var(--blanco);
+}
+footer{
+    padding-top: 40px;
+    padding-bottom: 30px;
+    background-color:var(--accent);
+    display: flex;
+}
+ul{
+    list-style: none; 
+}
+nav{
+    top: 10px;
+    position: sticky;
+    background-color: var(--primary);
+    color: var(--primary);
+    padding: 15px;
+}
+nav ul{
+    display: flex;
+    justify-content: space-around;
+}
+nav ul li{
+    list-style: none;
+    width: 100%;
+    padding: 5px 0;
+    text-align: center;
+}
+nav ul li:hover{
+    background-color: var(--accent);
+}
+nav ul li:hover a{
+    color: var(--primary);
+}
+nav a{
+    color:var(--accent);
+    text-decoration: none;
+}
+.logo{
+    width: 100px;
+    height: 50px;
+    border-radius: 5px;
+}
+footer section{
+    width: 33%;   
+}
+footer section:nth-child(2){
+    text-align: center;
+}
+footer section:nth-child(1){
+    margin-left: 300px;
+}
+footer section:last-child{
+    margin-right: 300px;
+    text-align: right;
+}

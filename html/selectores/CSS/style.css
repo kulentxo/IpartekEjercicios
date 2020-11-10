@@ -1,0 +1,22 @@
+#pruebaId{
+    background-color: blue;
+    color: white;
+}
+.pruebaClass{
+    background-color: yellow;
+}
+h1.pruebaClass{
+    color: teal;
+}
+h1, h2, h3, h4, h5{
+    font-family: Arial, Helvetica, sans-serif;
+}
+p{
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.2rem;
+    color: black;
+    text-align: justify;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
